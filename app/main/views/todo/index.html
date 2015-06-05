@@ -1,0 +1,10 @@
+  <li class="{{ if completed }}completed{{ end }} {{ if editing }}editing{{ end }} todo-item">
+    <div class="view">
+      <input class="toggle" type="checkbox" checked="{{ _completed }}">
+      <label e-dblclick="edit(event)">{{ label }}</label>
+      <button class="destroy" e-click="destroy"></button>
+    </div>
+    <form e-submit="stop_editing">
+      <input class="edit" value="{{ label }}">
+    </form>
+  </li>
