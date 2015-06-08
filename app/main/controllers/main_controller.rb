@@ -22,7 +22,9 @@ module Main
     end
 
     def incomplete
-      todos.size - complete
+      Promise.when(todos.size, complete).then do |size, complete|
+        size - complete
+      end
     end
 
     # Remove all completed
