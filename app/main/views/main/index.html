@@ -8,7 +8,7 @@
       <h1>todos</h1>
       <:new_todo />
     </header>
-    {{ if todos.size > 0 }}
+    {{ if any_todos? }}
       <section class="main">
 
         <input class="toggle-all" type="checkbox" checked="{{ all_complete }}">
@@ -31,7 +31,7 @@
           <:nav href="/active">Active</:nav>
           <:nav href="/completed">Completed</:nav>
         </ul>
-        {{ if complete > 0 }}
+        {{ if any_complete? }}
           <button class="clear-completed" e-click="clear_completed">Clear completed</button>
         {{ end }}
       </footer>

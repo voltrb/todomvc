@@ -45,6 +45,16 @@ module Main
       todos.all.each {|todo| todo._completed = val }
     end
 
+    # Return true if there are any todos
+    def any_todos?
+      todos.size.then {|s| s > 0 }
+    end
+
+    # return true if any todos are complete
+    def any_complete?
+      complete.then {|c| c > 0 }
+    end
+
 
     private
 
